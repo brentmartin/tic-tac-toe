@@ -3,6 +3,10 @@
 @player2 = []
 @p1win = FALSE
 @p2win = FALSE
+@p1score = 0
+@p2score = 0
+@gameover = FALSE
+@gamenumber = 0
 
 
 def p1_turn
@@ -15,9 +19,20 @@ def p1_turn
       p1_turn
     end
   end
-  puts "Player 'X', what have you?"
-  choice = gets.chomp.to_i
-  move(choice)
+  if @gameover == true
+    puts "Game Completed! Player 1(X), what have you?"
+    print "choose (#), or (n)ext game> "
+    choice = gets.chomp
+    if choice.upcase == "N" then
+      go
+    end
+    move(choice.to_i)
+  else
+    puts "Player 1(X), what have you?"
+    print "choose (#)> "
+    choice = gets.chomp.to_i
+    move(choice)
+  end
 end
 
 def p2_turn
@@ -30,24 +45,35 @@ def p2_turn
       p2_turn
     end
   end
-  puts "Player 'O', what have you?"
-  choice = gets.chomp.to_i
-  move(choice)
+  if @gameover == true
+    puts "Game Completed! Player 2(O), what have you?"
+    print "choose (#), or (n)ext game> "
+    choice = gets.chomp
+    if choice.upcase == "N" then
+      go
+    end
+    move(choice.to_i)
+  else
+    puts "Player 2(O), what have you?"
+    print "choose (#)> "
+    choice = gets.chomp.to_i
+    move(choice)
+  end
 end
 
 def p1_finnish(a, b, c)
   if @player1.include?(a) && @player1.include?(b) && @player1.include?(c)
     @p1win = true
-    @header = "X wins!"
-    p2_turn
+    @gameover = true
+    p1_wseq
   end
 end
 
 def p2_finnish(a, b, c)
   if @player2.include?(a) && @player2.include?(b) && @player2.include?(c)
     @p2win = true
-    @header = "O wins!"
-    p1_turn
+    @gameover = true
+    p2_wseq
   end
 end
 
@@ -77,22 +103,45 @@ def p2_win_check
   end
 end
 
+def p1_wseq
+  @p1score += 1
+  3.times do
+    @header = "           "
+    board_moves
+    sleep 0.5
+    @header = "p1(X) wins!"
+    board_moves
+    sleep 0.5
+  end
+end
+
+def p2_wseq
+  @p2score += 1
+  3.times do
+    @header = "           "
+    board_moves
+    sleep 0.5
+    @header = "p2(O) wins!"
+    board_moves
+    sleep 0.5
+  end
+end
+
 def play_game
-  until @board == []
+  until @board == nil
     p1_turn
     p1_win_check
     board_moves
+    sleep 0.5
 
     p2_turn
     p2_win_check
     board_moves
-
+    sleep 0.5
   end
 end
 
-
-
-def set_board
+def reset_board
   @sq1 = "1"
   @sq2 = "2"
   @sq3 = "3"
@@ -102,7 +151,21 @@ def set_board
   @sq7 = "7"
   @sq8 = "8"
   @sq9 = "9"
-  @header = " ready "
+  @header = "  BATTLE!  "
+  @p1win = FALSE
+  @p2win = FALSE
+  @gameover = FALSE
+  @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  @player1 = []
+  @player2 = []
+  @gamenumber += 1
+  3.times do
+    sleep 0.5
+    board_moves
+    puts "Game ##{@gamenumber} go!"
+    sleep 0.5
+    board_moves
+  end
 end
 
 def x_marks
@@ -169,50 +232,54 @@ def board_moves
   system("clear")
   x_marks
   o_marks
-  puts " Tic-tac-toe "
-  puts "   #{@header}   "
-  puts "┍━━━━━━━━━━━┑"
-  puts "⎟ #{@sq1} ║ #{@sq2} ║ #{@sq3} ⎟"
-  puts "⎟═══╬═══╬═══⎟"
-  puts "⎟ #{@sq4} ║ #{@sq5} ║ #{@sq6} ⎟"
-  puts "⎟═══╬═══╬═══⎟"
-  puts "⎟ #{@sq7} ║ #{@sq8} ║ #{@sq9} ⎟"
-  puts "┕━━━━━━━━━━━┙"
+  puts "    Tic-tac-toe    "
+  puts "    #{@header}     "
+  puts "╔════════╦════════╗"
+  puts "║ X = #{@p1score}  ║ O = #{@p2score}  ║"
+  puts "╚════════╩════════╝"
+  puts "   ┍━━━━━━━━━━━┑"
+  puts "   ⎟ #{@sq1} ║ #{@sq2} ║ #{@sq3} ⎟"
+  puts "   ⎟═══╬═══╬═══⎟"
+  puts "   ⎟ #{@sq4} ║ #{@sq5} ║ #{@sq6} ⎟"
+  puts "   ⎟═══╬═══╬═══⎟"
+  puts "   ⎟ #{@sq7} ║ #{@sq8} ║ #{@sq9} ⎟"
+  puts "   ┕━━━━━━━━━━━┙"
 end
 
 def boot_game
-  board_moves
   puts "Well, shall we do this?"
   print "(y)es or (n)o?> "
   start = gets.chomp
   if start.upcase == "Y"
+    puts "LETS GET THIS PARTY STARTED"
     3.times do
       sleep 0.5
-      board_moves
-      puts "LETS GET THIS PARTY STARTED!"
-      sleep 0.5
-      board_moves
+      # board_moves
+      print "!"
+      # board_moves
     end
   elsif start.upcase == "N"
-    board_moves
     puts "Right"
     3.times do
-      sleep 1
+      sleep 0.5
       print "."
     end
     print "so"
     sleep 3
     boot_game
   else
-    board_moves
     puts "YO! try that again!"
     sleep 1
     boot_game
   end
-  @header = "BATTLE!"
+  @header = " BATTLE! "
 end
 
-set_board
+def go
+  reset_board
+  play_game
+end
+
+
 boot_game
-play_game
-board_moves
+go
