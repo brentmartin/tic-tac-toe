@@ -6,6 +6,7 @@
 @p1score = 0
 @p2score = 0
 @gameover = FALSE
+@twoplayer = FALSE
 @gamenumber = 0
 
 
@@ -59,6 +60,21 @@ def p2_turn
     choice = gets.chomp.to_i
     move(choice)
   end
+end
+
+def c_turn
+  def move(n)
+    @player2.push(n)
+    @board.delete(n)
+  end
+  puts "Computer, what have you?"
+  3.times do
+    sleep 0.5
+    print "."
+  end
+  sleep 1
+  choice = @board.sample
+  move(choice)
 end
 
 def p1_finnish(a, b, c)
@@ -121,7 +137,11 @@ def p2_wseq
     @header = "           "
     board_moves
     sleep 0.5
-    @header = "p2(O) wins!"
+    if @twoplayer == true
+      @header = "p2(O) wins!"
+    elsif @twoplayer == false
+      @header = "Comp wins!"
+    end
     board_moves
     sleep 0.5
   end
@@ -134,7 +154,11 @@ def play_game
     board_moves
     sleep 0.5
 
-    p2_turn
+    if @twoplayer == true
+      p2_turn
+    else
+      c_turn
+    end
     p2_win_check
     board_moves
     sleep 0.5
@@ -247,31 +271,53 @@ def board_moves
 end
 
 def boot_game
-  puts "Well, shall we do this?"
-  print "(y)es or (n)o?> "
-  start = gets.chomp
-  if start.upcase == "Y"
-    puts "LETS GET THIS PARTY STARTED"
-    3.times do
-      sleep 0.5
-      # board_moves
-      print "!"
-      # board_moves
+  def to_start
+    puts "Well, shall we do this?"
+    print "(y)es or (n)o?> "
+    start = gets.chomp
+    if start.upcase == "Y"
+      puts "LETS GET THIS PARTY STARTED"
+      3.times do
+        sleep 0.5
+        # board_moves
+        print "!"
+        # board_moves
+      end
+    elsif start.upcase == "N"
+      puts "Right"
+      3.times do
+        sleep 0.5
+        print "."
+      end
+      print "so"
+      sleep 3
+      to_start
+    else
+      puts "YO! try that again!"
+      sleep 1
+      to_start
     end
-  elsif start.upcase == "N"
-    puts "Right"
-    3.times do
-      sleep 0.5
-      print "."
-    end
-    print "so"
-    sleep 3
-    boot_game
-  else
-    puts "YO! try that again!"
-    sleep 1
-    boot_game
   end
+  def to_opponent
+    puts "PvP or PvC"
+    print "(c)omputer or (p)layer?> "
+    opponent = gets.chomp
+    if opponent.upcase == "C"
+      @twoplayer = FALSE
+      puts "ITS COMPUTER!"
+      sleep 3
+    elsif opponent.upcase == "P"
+      @twoplayer = true
+      puts "ITS ANOTHER PLAYER!"
+      sleep 3
+    else
+      puts "YO! try that again!"
+      sleep 1
+      to_opponent
+    end
+  end
+  to_start
+  to_opponent
   @header = " BATTLE! "
 end
 
