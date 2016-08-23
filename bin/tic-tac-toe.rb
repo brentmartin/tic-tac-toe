@@ -77,7 +77,7 @@ def c_turn
   move(choice)
 end
 
-def p1_finnish(a, b, c)
+def p1_finish(a, b, c)
   if @player1.include?(a) && @player1.include?(b) && @player1.include?(c)
     @p1win = true
     @gameover = true
@@ -85,7 +85,7 @@ def p1_finnish(a, b, c)
   end
 end
 
-def p2_finnish(a, b, c)
+def p2_finish(a, b, c)
   if @player2.include?(a) && @player2.include?(b) && @player2.include?(c)
     @p2win = true
     @gameover = true
@@ -95,27 +95,27 @@ end
 
 def p1_win_check
   unless @p1win || @p2win
-    p1_finnish(1,2,3)
-    p1_finnish(4,5,6)
-    p1_finnish(7,8,9)
-    p1_finnish(1,4,7)
-    p1_finnish(2,5,8)
-    p1_finnish(3,6,9)
-    p1_finnish(1,5,9)
-    p1_finnish(3,5,7)
+    p1_finish(1,2,3)
+    p1_finish(4,5,6)
+    p1_finish(7,8,9)
+    p1_finish(1,4,7)
+    p1_finish(2,5,8)
+    p1_finish(3,6,9)
+    p1_finish(1,5,9)
+    p1_finish(3,5,7)
   end
 end
 
 def p2_win_check
   unless @p1win || @p2win
-    p2_finnish(1,2,3)
-    p2_finnish(4,5,6)
-    p2_finnish(7,8,9)
-    p2_finnish(1,4,7)
-    p2_finnish(2,5,8)
-    p2_finnish(3,6,9)
-    p2_finnish(1,5,9)
-    p2_finnish(3,5,7)
+    p2_finish(1,2,3)
+    p2_finish(4,5,6)
+    p2_finish(7,8,9)
+    p2_finish(1,4,7)
+    p2_finish(2,5,8)
+    p2_finish(3,6,9)
+    p2_finish(1,5,9)
+    p2_finish(3,5,7)
   end
 end
 
