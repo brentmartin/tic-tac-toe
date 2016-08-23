@@ -56,11 +56,7 @@ def c_turn
     @board.delete(choice)
   end
   puts "Computer, what have you?"
-  3.times do
-    sleep 0.5
-    print "."
-  end
-  sleep 1
+  timer("period", 2)
   choice = @board.sample
   computer_move(choice)
 end
@@ -265,20 +261,12 @@ def boot_game
     start = gets.chomp
     if start.upcase == "Y"
       puts "LETS GET THIS PARTY STARTED"
-      3.times do
-        sleep 0.5
-        # board_moves
-        print "!"
-        # board_moves
-      end
+      timer("exclaim", 3, 1)
     elsif start.upcase == "N"
       puts "Right"
-      3.times do
-        sleep 0.5
-        print "."
-      end
+      timer("period", 3, 1)
       print "so"
-      sleep 3
+      timer("blank", 0, 2)
       to_start
     else
       puts "YO! try that again!"
@@ -293,14 +281,14 @@ def boot_game
     if opponent.upcase == "C"
       @twoplayer = FALSE
       puts "ITS COMPUTER!"
-      sleep 3
+      timer("exclaim", 1, 1)
     elsif opponent.upcase == "P"
       @twoplayer = true
       puts "ITS ANOTHER PLAYER!"
-      sleep 3
+      timer("exclaim", 2, 1)
     else
       puts "YO! try that again!"
-      sleep 1
+      timer("blank", 2, 0)
       to_opponent
     end
   end
@@ -309,6 +297,15 @@ def boot_game
   @header = " BATTLE! "
 end
 
+def timer(action, number_of, extra_time)
+  number_of.times do
+    sleep 0.5
+    if action == "exclaim" then print "!" end
+    if action == "period" then print "." end
+    if action == "blank" then print "" end
+  end
+  sleep extra_time
+end
 def go
   reset_board
   play_game
