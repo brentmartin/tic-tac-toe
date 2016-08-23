@@ -260,7 +260,7 @@ def boot_game
     print "(y)es or (n)o?> "
     start = gets.chomp
     if start.upcase == "Y"
-      puts "LETS GET THIS PARTY STARTED"
+      print "LETS GET THIS PARTY STARTED"
       timer("exclaim", 3, 1)
     elsif start.upcase == "N"
       puts "Right"
@@ -276,7 +276,8 @@ def boot_game
   end
   def to_opponent
     puts "PvP or PvC"
-    print "(c)omputer or (p)layer?> "
+    puts "(c)omputer or (p)layer?"
+    print "> "
     opponent = gets.chomp
     if opponent.upcase == "C"
       @twoplayer = FALSE
