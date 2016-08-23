@@ -4,17 +4,20 @@
 @twoplayer = FALSE
 @gamenumber = 0
 
+def move(player)
+  choice = gets.chomp.to_i
+  if @board.include?(choice)
+    player.push(choice)
+    @board.delete(choice)
+  else
+    puts "Play not available, please try again!"
+    print "> "
+    move(player)
+  end
+end
 
 def p1_turn
-  def move(n)
-    if @board.include?(n)
-      @player1.push(n)
-      @board.delete(n)
-    else
-      puts "Play not available, please try again!"
-      p1_turn
-    end
-  end
+  player = @player1
   if @gameover == true
     puts "Game Completed! Player 1(X), what have you?"
     print "choose (#), or (n)ext game> "
@@ -25,22 +28,13 @@ def p1_turn
     move(choice.to_i)
   else
     puts "Player 1(X), what have you?"
-    print "choose (#)> "
-    choice = gets.chomp.to_i
-    move(choice)
+    print "> "
+    move(player)
   end
 end
 
 def p2_turn
-  def move(n)
-    if @board.include?(n)
-      @player2.push(n)
-      @board.delete(n)
-    else
-      puts "Play not available, please try again!"
-      p2_turn
-    end
-  end
+  player = @player2
   if @gameover == true
     puts "Game Completed! Player 2(O), what have you?"
     print "choose (#), or (n)ext game> "
@@ -51,16 +45,15 @@ def p2_turn
     move(choice.to_i)
   else
     puts "Player 2(O), what have you?"
-    print "choose (#)> "
-    choice = gets.chomp.to_i
-    move(choice)
+    print "> "
+    move(player)
   end
 end
 
 def c_turn
-  def move(n)
-    @player2.push(n)
-    @board.delete(n)
+  def computer_move(choice)
+    @player2.push(choice)
+    @board.delete(choice)
   end
   puts "Computer, what have you?"
   3.times do
@@ -69,7 +62,7 @@ def c_turn
   end
   sleep 1
   choice = @board.sample
-  move(choice)
+  computer_move(choice)
 end
 
 def p1_finish(a, b, c)
