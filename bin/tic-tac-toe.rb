@@ -1,8 +1,3 @@
-@board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-@player1 = []
-@player2 = []
-@p1win = FALSE
-@p2win = FALSE
 @p1score = 0
 @p2score = 0
 @gameover = FALSE
