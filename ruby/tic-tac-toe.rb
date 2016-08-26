@@ -1,3 +1,4 @@
+
 @p1score = 0
 @p2score = 0
 @gameover = FALSE
@@ -39,9 +40,7 @@ def p2_turn
     puts "Game Completed! Player 2(O), what have you?"
     print "choose (#), or (n)ext game> "
     choice = gets.chomp
-    if choice.upcase == "N" then
-      go
-    end
+    if choice.upcase == "N" then go end
     move(choice.to_i)
   else
     puts "Player 2(O), what have you?"
@@ -56,7 +55,7 @@ def c_turn
     @board.delete(choice)
   end
   puts "Computer, what have you?"
-  timer("period", 2)
+  timer("period", 3, 1)
   choice = @board.sample
   computer_move(choice)
 end
@@ -102,6 +101,18 @@ def p2_win_check
     p2_finish(3,5,7)
   end
 end
+
+def flash_header(blink_words, number_of)
+  number_of.times do
+    @header = "           "
+    board_moves
+    sleep 0.5
+    @header = "#{blink_words}"
+    board_moves
+    sleep 0.5
+  end
+end
+
 
 def p1_wseq
   @p1score += 1
@@ -236,30 +247,48 @@ def o_marks
   end
 end
 
+# i = 0
+#
+# 9.times do(i)
+#   i += 1
+#   puts i
+# end
+#
+#   end
+
 def board_moves
-  system("clear")
   x_marks
   o_marks
-  puts "    Tic-tac-toe    "
-  puts "    #{@header}     "
-  puts "╔════════╦════════╗"
-  puts "║ X = #{@p1score}  ║ O = #{@p2score}  ║"
-  puts "╚════════╩════════╝"
-  puts "   ┍━━━━━━━━━━━┑"
-  puts "   ⎟ #{@sq1} ║ #{@sq2} ║ #{@sq3} ⎟"
-  puts "   ⎟═══╬═══╬═══⎟"
-  puts "   ⎟ #{@sq4} ║ #{@sq5} ║ #{@sq6} ⎟"
-  puts "   ⎟═══╬═══╬═══⎟"
-  puts "   ⎟ #{@sq7} ║ #{@sq8} ║ #{@sq9} ⎟"
-  puts "   ┕━━━━━━━━━━━┙"
+  system("clear")
+  unless 1 == 0
+    puts "    Tic-tac-toe    "
+    puts "    #{@header}     "
+    puts "╔════════╦════════╗"
+    puts "║ X = #{@p1score}  ║ O = #{@p2score}  ║"
+    puts "╚════════╩════════╝"
+  end
+  unless 1 == 0
+    puts "   ┍━━━━━━━━━━━┑"
+    puts "   ⎟ #{@sq1} ║ #{@sq2} ║ #{@sq3} ⎟"
+    puts "   ⎟═══╬═══╬═══⎟"
+    puts "   ⎟ #{@sq4} ║ #{@sq5} ║ #{@sq6} ⎟"
+    puts "   ⎟═══╬═══╬═══⎟"
+    puts "   ⎟ #{@sq7} ║ #{@sq8} ║ #{@sq9} ⎟"
+    puts "   ┕━━━━━━━━━━━┙"
+  end
+  puts ""
 end
 
 def boot_game
   def to_start
-    puts "Well, shall we do this?"
+    system('clear')
+    puts "TIC-TAC-TOE!"
+    sleep 1
+    puts "Shall we do this?"
     print "(y)es or (n)o?> "
     start = gets.chomp
     if start.upcase == "Y"
+      system('clear')
       print "LETS GET THIS PARTY STARTED"
       timer("exclaim", 3, 1)
     elsif start.upcase == "N"
@@ -275,17 +304,20 @@ def boot_game
     end
   end
   def to_opponent
+    system('clear')
     puts "PvP or PvC"
     puts "(c)omputer or (p)layer?"
     print "> "
     opponent = gets.chomp
     if opponent.upcase == "C"
       @twoplayer = FALSE
-      puts "ITS COMPUTER!"
-      timer("exclaim", 1, 1)
+      system('clear')
+      print "ITS COMPUTER!"
+      timer("exclaim", 2, 1)
     elsif opponent.upcase == "P"
       @twoplayer = true
-      puts "ITS ANOTHER PLAYER!"
+      system('clear')
+      print "ITS ANOTHER PLAYER!"
       timer("exclaim", 2, 1)
     else
       puts "YO! try that again!"
@@ -307,11 +339,11 @@ def timer(action, number_of, extra_time)
   end
   sleep extra_time
 end
+
 def go
   reset_board
   play_game
 end
-
 
 boot_game
 go
