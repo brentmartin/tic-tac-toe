@@ -26,6 +26,9 @@ func main() {
 	}
   playerOneScore := int
 	playerTwoScore := int
+  boardAvailableMoves := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	playerOneMoves := []int
+  playerTwoMoves := []int
 func generateLogic(playerOneMoves []int, playerTwoMoves []int, boardAvailableMoves []int) {
 
 }
