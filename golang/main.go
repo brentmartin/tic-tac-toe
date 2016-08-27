@@ -26,4 +26,9 @@ func main() {
 		println("   ┕━━━━━━━━━━━┙   ")
 		fmt.Println(scanner.Text())
 	}
+func generateLogic(playerOneMoves []int, playerTwoMoves []int, boardAvailableMoves []int) {
+
+}
+
+func generateBoard(playerOneScore, playerTwoScore) {
 }
