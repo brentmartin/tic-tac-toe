@@ -37,6 +37,19 @@ func main() {
   fmt.Print("Please choose an option: ")
 
   fmt.Scanln(&option)
+
+  switch option {
+  case "1":
+    generateLogic(playerOneMoves, playerTwoMoves, boardAvailableMoves)
+    generateBoard(playerOneScore, playerTwoScore)
+  case "2":
+    generateLogic(playerOneMoves, playerTwoMoves, boardAvailableMoves)
+    generateBoard(playerOneScore, playerTwoScore)
+  default:
+    fmt.Println("Uknown option, no action taken")
+  }
+}
+
 func generateLogic(playerOneMoves []int, playerTwoMoves []int, boardAvailableMoves []int) {
 
 }
