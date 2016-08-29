@@ -7,11 +7,6 @@ import (
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	for scanner.Scan() {
-		os.Stdout.WriteString("\x1b[3;J\x1b[H\x1b[2J")
-		fmt.Println(scanner.Text())
-	}
   playerOneScore := int
 	playerTwoScore := int
   boardAvailableMoves := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
