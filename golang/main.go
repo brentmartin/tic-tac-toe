@@ -6,11 +6,6 @@ import (
 )
 
 func main() {
-  playerOneScore := int
-	playerTwoScore := int
-  boardAvailableMoves := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	playerOneMoves := []int
-  playerTwoMoves := []int
 
   var option string
 
@@ -30,13 +25,17 @@ func main() {
   default:
     fmt.Println("Uknown option, no action taken")
   }
+	playerOneScore := 1
+	playerTwoScore := 1
+	boardAvailableMoves := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	playerOneMoves := make([]int, 1, 10)
+	playerTwoMoves := make([]int, 1, 10)
 }
 
 func generateLogic(playerOneMoves []int, playerTwoMoves []int, boardAvailableMoves []int) {
 
 }
 
-func generateBoard(playerOneScore, playerTwoScore) {
 
 
   println("    Tic-tac-toe    ")
@@ -51,4 +50,5 @@ func generateBoard(playerOneScore, playerTwoScore) {
   println("   ⎟═══╬═══╬═══⎟   ")
   println("   ⎟ 7 ║ 8 ║ 9 ⎟   ")
   println("   ┕━━━━━━━━━━━┙   ")
+func generateBoard(playerOneScore int, playerTwoScore int) {
 }
