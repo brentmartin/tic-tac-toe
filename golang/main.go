@@ -36,6 +36,10 @@ func generateLogic(playerOneMoves []int, playerTwoMoves []int, boardAvailableMov
 }
 
 func generateBoard(playerOneScore int, playerTwoScore int) {
+	playerOneScore = +1
+	playerTwoScore = +1
+	println(playerOneScore)
+	println(playerTwoScore)
 	println("")
 	println("    Tic-tac-toe    ")
 	println("   Golang Edition  ")
