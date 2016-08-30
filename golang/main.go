@@ -35,17 +35,18 @@ func generateLogic(playerOneMoves []int, playerTwoMoves []int, boardAvailableMov
 
 }
 
-  println("    Tic-tac-toe    ")
-  println("   Golang Edition  ")
-  println("╔════════╦════════╗")
-  println("║ X =", x, " ║ O =", o, " ║")
-  println("╚════════╩════════╝")
-  println("   ┍━━━━━━━━━━━┑   ")
-  println("   ⎟ 1 ║ 2 ║ 3 ⎟   ")
-  println("   ⎟═══╬═══╬═══⎟   ")
-  println("   ⎟ 4 ║ 5 ║ 6 ⎟   ")
-  println("   ⎟═══╬═══╬═══⎟   ")
-  println("   ⎟ 7 ║ 8 ║ 9 ⎟   ")
-  println("   ┕━━━━━━━━━━━┙   ")
 func generateBoard(playerOneScore int, playerTwoScore int) {
+	println("")
+	println("    Tic-tac-toe    ")
+	println("   Golang Edition  ")
+	println("╔════════╦════════╗")
+	println("║ X =", playerOneScore, " ║ O =", playerTwoScore, " ║")
+	println("╚════════╩════════╝")
+	println("   ┍━━━━━━━━━━━┑   ")
+	println("   ⎟ 1 ║ 2 ║ 3 ⎟   ")
+	println("   ⎟═══╬═══╬═══⎟   ")
+	println("   ⎟ 4 ║ 5 ║ 6 ⎟   ")
+	println("   ⎟═══╬═══╬═══⎟   ")
+	println("   ⎟ 7 ║ 8 ║ 9 ⎟   ")
+	println("   ┕━━━━━━━━━━━┙   ")
 }
