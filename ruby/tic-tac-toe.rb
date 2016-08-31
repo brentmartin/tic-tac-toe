@@ -64,7 +64,7 @@ def p1_finish(a, b, c)
   if @player1.include?(a) && @player1.include?(b) && @player1.include?(c)
     @p1win = true
     @gameover = true
-    p1_wseq
+    p1_win_sequence
   end
 end
 
@@ -72,7 +72,7 @@ def p2_finish(a, b, c)
   if @player2.include?(a) && @player2.include?(b) && @player2.include?(c)
     @p2win = true
     @gameover = true
-    p2_wseq
+    p2_win_sequence
   end
 end
 
@@ -114,7 +114,7 @@ def flash_header(blink_words, number_of)
 end
 
 
-def p1_wseq
+def p1_win_sequence
   @p1score += 1
   3.times do
     @header = "           "
@@ -126,7 +126,7 @@ def p1_wseq
   end
 end
 
-def p2_wseq
+def p2_win_sequence
   @p2score += 1
   3.times do
     @header = "           "
