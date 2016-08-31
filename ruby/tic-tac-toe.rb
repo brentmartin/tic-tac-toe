@@ -102,17 +102,16 @@ def p2_win_check
   end
 end
 
-def flash_header(blink_words, number_of)
-  number_of.times do
-    @header = "           "
-    board_moves
-    sleep 0.5
-    @header = "#{blink_words}"
-    board_moves
-    sleep 0.5
-  end
-end
-
+# def flash_header(blink_words, number_of)
+#   number_of.times do
+#     @header = "           "
+#     board_moves
+#     sleep 0.5
+#     @header = "#{blink_words}"
+#     board_moves
+#     sleep 0.5
+#   end
+# end
 
 def p1_win_sequence
   @p1score += 1
