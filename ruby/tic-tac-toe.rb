@@ -160,7 +160,7 @@ def cat_win_sequence
 end
 
 def play_game
-  until @board == nil
+  unless @board == []
     p1_turn
     p1_win_check
     board_moves
