@@ -139,6 +139,16 @@ def p2_win_sequence
     board_moves
     sleep 0.5
   end
+def cat_win_sequence
+  3.times do
+    @header = "           "
+    board_moves
+    sleep 0.5
+    @header = " TIE-GAME! "
+    board_moves
+    sleep 0.5
+  end
+  go
 end
 
 def play_game
@@ -156,7 +166,10 @@ def play_game
     p2_win_check
     board_moves
     sleep 0.5
+  else
+    cat_win_sequence
   end
+  play_game
 end
 
 def reset_board
