@@ -27,10 +27,28 @@ def p1_turn
       go
     end
     move(choice.to_i)
+def continue
+  puts "Shall we play again?"
+  puts "(n)ext game, (r)eturn to menu, or (q)uit"
+  print "> "
+  choice = gets.chomp
+  case choice.upcase
+  when "Q"
+    exit
+  when "N"
+    @gameover = false
+  when "R"
+    @gameover = true
+    @p1score = 0
+    @p2score = 0
   else
     puts "Player 1(X), what have you?"
     print "> "
     move(player)
+    puts "I'm sorry, we didn't get that - lets try again."
+    sleep 1
+    board_moves
+    continue
   end
 end
 
@@ -139,6 +157,7 @@ def p2_win_sequence
     board_moves
     sleep 0.5
   end
+end
 def cat_win_sequence
   3.times do
     @header = "           "
