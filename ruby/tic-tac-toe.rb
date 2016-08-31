@@ -165,12 +165,8 @@ def play_game
     p1_win_check
     board_moves
     sleep 0.5
-
-    if @twoplayer == true
-      p2_turn
-    else
-      c_turn
-    end
+    p2_turn if @twoplayer == true && @board != []
+    c_turn if @twoplayer == false && @board != []
     p2_win_check
     board_moves
     sleep 0.5
