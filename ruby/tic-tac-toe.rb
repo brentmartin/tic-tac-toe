@@ -349,6 +349,8 @@ def timer(action, number_of, extra_time)
 end
 
 def go
+  continue if @gameover == true
+  boot_game if @gameover == true
   reset_board
   play_game
 end
