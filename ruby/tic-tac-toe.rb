@@ -292,53 +292,45 @@ def board_moves
 end
 
 def boot_game
-  def to_start
+  def intro(try_again)
     system('clear')
-    puts "TIC-TAC-TOE!"
-    sleep 1
-    puts "Shall we do this?"
-    print "(y)es or (n)o?> "
-    start = gets.chomp
-    if start.upcase == "Y"
-      system('clear')
-      print "LETS GET THIS PARTY STARTED"
-      timer("exclaim", 3, 1)
-    elsif start.upcase == "N"
-      puts "Right"
-      timer("period", 3, 1)
-      print "so"
-      timer("blank", 0, 2)
-      to_start
-    else
-      puts "YO! try that again!"
-      sleep 1
-      to_start
-    end
+    print "TIC-TAC-TOE!"
+    timer("period", 3, 1) unless try_again == true
+    print "LETS GET THIS PARTY STARTED! "
+    timer("blank", 2, 0) unless try_again == true
+    puts "PvP or PvC?"
   end
-  def to_opponent
-    system('clear')
-    puts "PvP or PvC"
-    puts "(c)omputer or (p)layer?"
+
+  def pick
+    puts "pick (c)omputer or (p)layer?... or just (q)"
     print "> "
-    opponent = gets.chomp
-    if opponent.upcase == "C"
+    answer = gets.chomp
+    case answer.upcase
+    when "C"
       @twoplayer = FALSE
       system('clear')
       print "ITS COMPUTER!"
       timer("exclaim", 2, 1)
-    elsif opponent.upcase == "P"
+    when "P"
       @twoplayer = true
       system('clear')
       print "ITS ANOTHER PLAYER!"
       timer("exclaim", 2, 1)
+    when "Q"
+      system('clear')
+      print "Well, enjoy your day then!"
+      timer("blank", 2, 1)
+      exit
     else
-      puts "YO! try that again!"
-      timer("blank", 2, 0)
-      to_opponent
+      puts "Yo, you're answer is not valid homeboy - try that again!"
+      timer("blank", 2, 1)
+      intro(try_again = true)
+      pick
     end
   end
-  to_start
-  to_opponent
+
+  intro(try_again = false)
+  pick
   @header = " BATTLE! "
 end
 
