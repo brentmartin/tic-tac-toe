@@ -17,16 +17,6 @@ def move(player)
   end
 end
 
-def p1_turn
-  player = @player1
-  if @gameover == true
-    puts "Game Completed! Player 1(X), what have you?"
-    print "choose (#), or (n)ext game> "
-    choice = gets.chomp
-    if choice.upcase == "N" then
-      go
-    end
-    move(choice.to_i)
 def continue
   puts "Shall we play again?"
   puts "(n)ext game, (r)eturn to menu, or (q)uit"
@@ -42,9 +32,6 @@ def continue
     @p1score = 0
     @p2score = 0
   else
-    puts "Player 1(X), what have you?"
-    print "> "
-    move(player)
     puts "I'm sorry, we didn't get that - lets try again."
     sleep 1
     board_moves
@@ -52,19 +39,18 @@ def continue
   end
 end
 
+def p1_turn
+  player = @player1
+  puts "Player 1(X), what have you?"
+  print "> "
+  move(player)
+end
+
 def p2_turn
   player = @player2
-  if @gameover == true
-    puts "Game Completed! Player 2(O), what have you?"
-    print "choose (#), or (n)ext game> "
-    choice = gets.chomp
-    if choice.upcase == "N" then go end
-    move(choice.to_i)
-  else
-    puts "Player 2(O), what have you?"
-    print "> "
-    move(player)
-  end
+  puts "Player 2(O), what have you?"
+  print "> "
+  move(player)
 end
 
 def c_turn
@@ -141,6 +127,7 @@ def p1_win_sequence
     board_moves
     sleep 0.5
   end
+  go
 end
 
 def p2_win_sequence
@@ -157,7 +144,9 @@ def p2_win_sequence
     board_moves
     sleep 0.5
   end
+  go
 end
+
 def cat_win_sequence
   3.times do
     @header = "           "
