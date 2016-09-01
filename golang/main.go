@@ -63,3 +63,12 @@ func generateBoard(playerOneScore int, playerTwoScore int) {
 	println("   ⎟ 7 ║ 8 ║ 9 ⎟   ")
 	println("   ┕━━━━━━━━━━━┙   ")
 }
+sq1 := "1"
+sq2 := "2"
+sq3 := "3"
+sq4 := "4"
+sq5 := "5"
+sq6 := "6"
+sq7 := "7"
+sq8 := "8"
+sq9 := "9"
