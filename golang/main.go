@@ -56,11 +56,11 @@ func generateBoard(playerOneScore int, playerTwoScore int) {
 	println("║ X =", playerOneScore, " ║ O =", playerTwoScore, " ║")
 	println("╚════════╩════════╝")
 	println("   ┍━━━━━━━━━━━┑   ")
-	println("   ⎟ 1 ║ 2 ║ 3 ⎟   ")
+	println("   ⎟ ", sq1," ║ ", sq2," ║ ", sq3," ⎟   ")
 	println("   ⎟═══╬═══╬═══⎟   ")
-	println("   ⎟ 4 ║ 5 ║ 6 ⎟   ")
+	println("   ⎟ ", sq4," ║ ", sq5," ║ ", sq6," ⎟   ")
 	println("   ⎟═══╬═══╬═══⎟   ")
-	println("   ⎟ 7 ║ 8 ║ 9 ⎟   ")
+	println("   ⎟ ", sq7," ║ ", sq8," ║ ", sq9," ⎟   ")
 	println("   ┕━━━━━━━━━━━┙   ")
 }
 sq1 := "1"
