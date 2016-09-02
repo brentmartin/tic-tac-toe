@@ -11,7 +11,6 @@ func main() {
   gameNumber := 0
 
   header := "           "
-	boardAvailableMoves := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 
 	var option string
 
@@ -33,6 +32,7 @@ func main() {
 	pTwoScore := 0
 	pOneWin := false
 	pTwoWin := false
+	boardMoves := make([]int, 1, 10)
 	pOneMoves := make([]int, 1, 10)
 	pTwoMoves := make([]int, 1, 10)
 	}
