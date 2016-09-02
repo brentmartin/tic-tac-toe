@@ -85,6 +85,14 @@ func generateBoard(gameOn bool, sq []string, pOneMoves []int) {
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
 }
+
+func integerInSlice(a int, list []int) bool {
+	for _, b := range list {
+		if b == a {
+			return true
+		}
+	}
+	return false
 }
 
 }
