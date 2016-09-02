@@ -64,7 +64,6 @@ func main() {
 	}
 }
 
-func generateLogic(playerOneMoves []int, playerTwoMoves []int, boardAvailableMoves []int) {
 func generateBoard(gameOn bool, sq []string, pOneMoves []int) {
 
 }
