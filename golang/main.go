@@ -23,7 +23,7 @@ func main() {
 
 	var choice string
 
-	for i := 1; i <= 3; i++ {
+	for i := 1; i <= 10; i++ {
 		generateBoard(gameOn, sq, pOneMoves, header)
 
 		if gameOn == false {
