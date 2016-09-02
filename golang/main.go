@@ -29,11 +29,14 @@ func main() {
 	pOneScore := 0
 	pTwoScore := 0
 	gameOn := false
+
+	sq := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
 	pOneWin := false
 	pTwoWin := false
 	boardMoves := make([]int, 1, 10)
 	pOneMoves := make([]int, 1, 10)
 	pTwoMoves := make([]int, 1, 10)
+
 	var choice string
 	}
 }
