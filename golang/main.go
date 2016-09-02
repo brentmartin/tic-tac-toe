@@ -39,6 +39,11 @@ func main() {
 			fmt.Println("C) Play against Computer")
 			fmt.Println("P) Play against Player")
 		}
+
+		if gameOn == true {
+			fmt.Println("The numbers correspond with the tiles")
+			fmt.Println("Choose a number 1-9 to make your move")
+		}
 	}
 }
 
