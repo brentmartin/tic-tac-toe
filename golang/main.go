@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-  gameOver := false
   twoPlayer := false
   gameNumber := 0
 
@@ -29,6 +28,7 @@ func main() {
 		fmt.Println("Uknown option, no action taken")
 	pOneScore := 0
 	pTwoScore := 0
+	gameOn := false
 	pOneWin := false
 	pTwoWin := false
 	boardMoves := make([]int, 1, 10)
