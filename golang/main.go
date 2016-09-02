@@ -12,7 +12,6 @@ func main() {
 
   header := "           "
 
-	var option string
 
 	fmt.Println("1) Play against Computer")
 	fmt.Println("2) Play against Player")
@@ -35,6 +34,7 @@ func main() {
 	boardMoves := make([]int, 1, 10)
 	pOneMoves := make([]int, 1, 10)
 	pTwoMoves := make([]int, 1, 10)
+	var choice string
 	}
 }
 
