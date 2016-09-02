@@ -6,20 +6,12 @@ import (
 )
 
 func main() {
-	playerOneScore := 1
-	playerTwoScore := 1
-	playerOneScore := 0
-	playerTwoScore := 0
   gameOver := false
   twoPlayer := false
   gameNumber := 0
 
   header := "           "
-  playerOneWin := false
-  playerTwoWin := false
 	boardAvailableMoves := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	playerOneMoves := make([]int, 1, 10)
-	playerTwoMoves := make([]int, 1, 10)
 
 	var option string
 
@@ -37,6 +29,12 @@ func main() {
 		generateBoard(playerOneScore, playerTwoScore)
 	default:
 		fmt.Println("Uknown option, no action taken")
+	pOneScore := 0
+	pTwoScore := 0
+	pOneWin := false
+	pTwoWin := false
+	pOneMoves := make([]int, 1, 10)
+	pTwoMoves := make([]int, 1, 10)
 	}
 }
 
