@@ -44,6 +44,9 @@ func main() {
 			fmt.Println("The numbers correspond with the tiles")
 			fmt.Println("Choose a number 1-9 to make your move")
 		}
+
+		fmt.Print("Please choose an option: ")
+		fmt.Scanln(&choice)
 	}
 }
 
