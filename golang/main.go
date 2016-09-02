@@ -73,7 +73,7 @@ func generateBoard(gameOn bool, sq []string, pOneMoves []int, header string) {
 
 	fmt.Println("")
 	fmt.Println("    Tic-tac-toe    ")
-	fmt.Println("   Golang Edition  ")
+	fmt.Println(header)
 	fmt.Println("╔════════╦════════╗")
 	fmt.Println("║ X = 0  ║ O = 0  ║")
 	fmt.Println("╚════════╩════════╝")
