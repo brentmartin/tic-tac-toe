@@ -108,3 +108,6 @@ func doThings(pM []int, bM []int, sq []string, x int) ([]int, []int, []string) {
 
 	return pM, bM, sq
 }
+
+// time.Sleep(time.Millisecond * 2000)
+
