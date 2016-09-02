@@ -6,15 +6,6 @@ import (
 )
 
 func main() {
-
-	switch option {
-	case "1":
-		generateLogic(playerOneMoves, playerTwoMoves, boardAvailableMoves)
-		generateBoard(playerOneScore, playerTwoScore)
-	case "2":
-		generateBoard(playerOneScore, playerTwoScore)
-	default:
-		fmt.Println("Uknown option, no action taken")
 	pOneScore := 0
 	pTwoScore := 0
 	gameOn := false
@@ -47,6 +38,29 @@ func main() {
 
 		fmt.Print("Please choose an option: ")
 		fmt.Scanln(&choice)
+
+		switch {
+		case choice == "1" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 1)
+		case choice == "2" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 2)
+		case choice == "3" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 3)
+		case choice == "4" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 4)
+		case choice == "5" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 5)
+		case choice == "6" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 6)
+		case choice == "7" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 7)
+		case choice == "8" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 8)
+		case choice == "9" && gameOn == true:
+			doThings(pOneMoves, boardMoves, sq, 9)
+		default:
+			fmt.Println("Try again plz")
+		}
 	}
 }
 
