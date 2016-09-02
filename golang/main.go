@@ -35,8 +35,10 @@ func main() {
 	for i := 1; i <= 3; i++ {
 		generateBoard(gameOn, sq, pOneMoves)
 
+		if gameOn == false {
 			fmt.Println("C) Play against Computer")
 			fmt.Println("P) Play against Player")
+		}
 	}
 }
 
