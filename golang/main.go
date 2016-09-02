@@ -6,10 +6,6 @@ import (
 )
 
 func main() {
-  twoPlayer := false
-  gameNumber := 0
-
-  header := "           "
 
 
 	fmt.Println("1) Play against Computer")
@@ -29,6 +25,10 @@ func main() {
 	pOneScore := 0
 	pTwoScore := 0
 	gameOn := false
+	twoPlayer := false
+	gameNumber := 0
+
+	header := "           "
 
 	sq := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
 	pOneWin := false
