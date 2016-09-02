@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	// pOneScore := 0
-	// pTwoScore := 0
+	pOneScore := 0
+	pTwoScore := 0
 	gameOn := true
 	// twoPlayer := false
 	// gameNumber := 0
