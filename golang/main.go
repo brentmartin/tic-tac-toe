@@ -95,4 +95,10 @@ func integerInSlice(a int, list []int) bool {
 	return false
 }
 
+	for i := 1; i <= 9; i++ {
+		if integerInSlice(i, pM) {
+			sq[i] = "X"
+		}
+	}
+
 }
