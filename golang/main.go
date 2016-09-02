@@ -6,21 +6,19 @@ import (
 )
 
 func main() {
-	pOneScore := 0
-	pTwoScore := 0
-	twoPlayer := false
-	gameNumber := 0
-
-	header := "           "
+	// pOneScore := 0
+	// pTwoScore := 0
 	gameOn := true
+	// twoPlayer := false
+	// gameNumber := 0
 
 	header := "   Golang Edition  "
 	sq := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
-	pOneWin := false
-	pTwoWin := false
+	// pOneWin := false
+	// pTwoWin := false
 	boardMoves := make([]int, 1, 10)
 	pOneMoves := make([]int, 1, 10)
-	pTwoMoves := make([]int, 1, 10)
+	// pTwoMoves := make([]int, 1, 10)
 
 	var choice string
 
