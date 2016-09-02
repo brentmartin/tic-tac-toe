@@ -7,13 +7,6 @@ import (
 
 func main() {
 
-
-	fmt.Println("1) Play against Computer")
-	fmt.Println("2) Play against Player")
-	fmt.Print("Please choose an option: ")
-
-	fmt.Scanln(&option)
-
 	switch option {
 	case "1":
 		generateLogic(playerOneMoves, playerTwoMoves, boardAvailableMoves)
@@ -42,6 +35,8 @@ func main() {
 	for i := 1; i <= 3; i++ {
 		generateBoard(gameOn, sq, pOneMoves)
 
+			fmt.Println("C) Play against Computer")
+			fmt.Println("P) Play against Player")
 	}
 }
 
