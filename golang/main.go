@@ -40,6 +40,8 @@ func main() {
 	var choice string
 
 	for i := 1; i <= 3; i++ {
+		generateBoard(gameOn, sq, pOneMoves)
+
 	}
 }
 
