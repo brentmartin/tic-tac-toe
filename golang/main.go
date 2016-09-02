@@ -38,6 +38,8 @@ func main() {
 	pTwoMoves := make([]int, 1, 10)
 
 	var choice string
+
+	for i := 1; i <= 3; i++ {
 	}
 }
 
