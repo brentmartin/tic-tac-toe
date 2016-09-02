@@ -71,19 +71,20 @@ func generateBoard(gameOn bool, sq []string, pOneMoves []int) {
 		gameOn = true
 	}
 
+	fmt.Println("")
+	fmt.Println("    Tic-tac-toe    ")
+	fmt.Println("   Golang Edition  ")
+	fmt.Println("╔════════╦════════╗")
+	fmt.Println("║ X = 0  ║ O = 0  ║")
+	fmt.Println("╚════════╩════════╝")
+	fmt.Println("   ┍━━━━━━━━━━━┑   ")
+	fmt.Println("   ⎟", sq[1], "║", sq[2], "║", sq[3], "⎟   ")
+	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
+	fmt.Println("   ⎟", sq[4], "║", sq[5], "║", sq[6], "⎟   ")
+	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
+	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
+	fmt.Println("   ┕━━━━━━━━━━━┙   ")
+}
 }
 
-	println("")
-	println("    Tic-tac-toe    ")
-	println("   Golang Edition  ")
-	println("╔════════╦════════╗")
-	println("║ X =", playerOneScore, " ║ O =", playerTwoScore, " ║")
-	println("╚════════╩════════╝")
-	println("   ┍━━━━━━━━━━━┑   ")
-	println("   ⎟ ", sq1," ║ ", sq2," ║ ", sq3," ⎟   ")
-	println("   ⎟═══╬═══╬═══⎟   ")
-	println("   ⎟ ", sq4," ║ ", sq5," ║ ", sq6," ⎟   ")
-	println("   ⎟═══╬═══╬═══⎟   ")
-	println("   ⎟ ", sq7," ║ ", sq8," ║ ", sq9," ⎟   ")
-	println("   ┕━━━━━━━━━━━┙   ")
 }
