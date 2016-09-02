@@ -95,10 +95,15 @@ func integerInSlice(a int, list []int) bool {
 	return false
 }
 
+func doThings(pM []int, bM []int, sq []string, x int) ([]int, []int, []string) {
+	pM = append(pM, x)
+	bM = append(bM, x)
+
 	for i := 1; i <= 9; i++ {
 		if integerInSlice(i, pM) {
 			sq[i] = "X"
 		}
 	}
 
+	return pM, bM, sq
 }
