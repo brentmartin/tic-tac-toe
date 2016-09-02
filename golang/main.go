@@ -24,7 +24,7 @@ func main() {
 	var choice string
 
 	for i := 1; i <= 3; i++ {
-		generateBoard(gameOn, sq, pOneMoves)
+		generateBoard(gameOn, sq, pOneMoves, header)
 
 		if gameOn == false {
 			fmt.Println("C) Play against Computer")
