@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	// "time"
 )
+
+var wg sync.WaitGroup
 
 var pOneScore int
 var pTwoScore int
