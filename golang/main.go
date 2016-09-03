@@ -28,6 +28,7 @@ func main() {
 	// pTwoMoves = make([]int, 1, 10)
 	pOneScore = 0
 	pTwoScore = 0
+	gameOn = true
 
 
 
