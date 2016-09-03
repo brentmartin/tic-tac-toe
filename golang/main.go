@@ -10,6 +10,7 @@ var pTwoScore int
 var header string
 var choice string
 // var gameNumber int
+var boardMoves []int
 var pOneMoves []int
 
 // var pTwoMoves []int
@@ -21,7 +22,6 @@ var sq []string
 // var twoPlayer bool
 func main() {
 
-	boardMoves := make([]int, 1, 10)
 
 
 	for i := 1; i <= 10; i++ {
