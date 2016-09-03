@@ -33,6 +33,8 @@ func main() {
 	pTwoScore = 0
 	gameOn = true
 
+	go playController()
+	go boardUpdater()
 func boardUpdater() {
 
 	// if gameOn == false {
