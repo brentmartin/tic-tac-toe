@@ -7,8 +7,8 @@ import (
 
 var pOneScore int
 var pTwoScore int
+var gameOn bool
 func main() {
-	gameOn := true
 	// twoPlayer := false
 	// gameNumber := 0
 
