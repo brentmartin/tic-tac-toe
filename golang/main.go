@@ -33,8 +33,12 @@ func main() {
 	pTwoScore = 0
 	gameOn = true
 
+	wg.Add(2)
 	go playController()
 	go boardUpdater()
+	wg.Wait()
+
+}
 func boardUpdater() {
 
 	// if gameOn == false {
