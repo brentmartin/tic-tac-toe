@@ -32,8 +32,26 @@ func main() {
 
 func boardUpdater() {
 
+	// if gameOn == false {
+	// 	pOneMoves = make([]int, 1, 10)
+	// 	sq = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+	// 	gameOn = true
+	// }
 
-	for i := 1; i <= 10; i++ {
+	fmt.Println("")
+	fmt.Println("    Tic-tac-toe    ")
+	fmt.Println(header)
+	fmt.Println("╔════════╦════════╗")
+	fmt.Println("║ X =", pOneScore, " ║ O =", pTwoScore, " ║")
+	fmt.Println("╚════════╩════════╝")
+	fmt.Println("   ┍━━━━━━━━━━━┑   ")
+	fmt.Println("   ⎟", sq[1], "║", sq[2], "║", sq[3], "⎟   ")
+	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
+	fmt.Println("   ⎟", sq[4], "║", sq[5], "║", sq[6], "⎟   ")
+	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
+	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
+	fmt.Println("   ┕━━━━━━━━━━━┙   ")
+}
 
 func playController() {
 		if gameOn == false {
@@ -72,27 +90,6 @@ func playController() {
 			fmt.Println("Try again plz")
 		}
 	}
-}
-
-	if gameOn == false {
-		pOneMoves = make([]int, 1, 10)
-		sq = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
-		gameOn = true
-	}
-
-	fmt.Println("")
-	fmt.Println("    Tic-tac-toe    ")
-	fmt.Println(header)
-	fmt.Println("╔════════╦════════╗")
-	fmt.Println("║ X = 0  ║ O = 0  ║")
-	fmt.Println("╚════════╩════════╝")
-	fmt.Println("   ┍━━━━━━━━━━━┑   ")
-	fmt.Println("   ⎟", sq[1], "║", sq[2], "║", sq[3], "⎟   ")
-	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
-	fmt.Println("   ⎟", sq[4], "║", sq[5], "║", sq[6], "⎟   ")
-	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
-	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
-	fmt.Println("   ┕━━━━━━━━━━━┙   ")
 }
 
 func integerInSlice(a int, list []int) bool {
