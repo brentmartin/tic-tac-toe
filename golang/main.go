@@ -10,12 +10,13 @@ var pTwoScore int
 // var gameNumber int
 var gameOn bool
 var sq []string
+
+// var pOneWin bool
+// var pTwoWin bool
 // var twoPlayer bool
 func main() {
 
 	header := "   Golang Edition  "
-	// pOneWin := false
-	// pTwoWin := false
 	boardMoves := make([]int, 1, 10)
 	pOneMoves := make([]int, 1, 10)
 	// pTwoMoves := make([]int, 1, 10)
