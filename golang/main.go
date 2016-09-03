@@ -7,10 +7,10 @@ import (
 
 var pOneScore int
 var pTwoScore int
+// var gameNumber int
 var gameOn bool
 func main() {
 	// twoPlayer := false
-	// gameNumber := 0
 
 	header := "   Golang Edition  "
 	sq := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
