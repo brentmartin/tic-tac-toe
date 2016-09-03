@@ -7,6 +7,7 @@ import (
 
 var pOneScore int
 var pTwoScore int
+var header string
 // var gameNumber int
 var gameOn bool
 var sq []string
@@ -16,7 +17,6 @@ var sq []string
 // var twoPlayer bool
 func main() {
 
-	header := "   Golang Edition  "
 	boardMoves := make([]int, 1, 10)
 	pOneMoves := make([]int, 1, 10)
 	// pTwoMoves := make([]int, 1, 10)
