@@ -8,6 +8,7 @@ import (
 var pOneScore int
 var pTwoScore int
 var header string
+var choice string
 // var gameNumber int
 var gameOn bool
 var sq []string
@@ -21,7 +22,6 @@ func main() {
 	pOneMoves := make([]int, 1, 10)
 	// pTwoMoves := make([]int, 1, 10)
 
-	var choice string
 
 	for i := 1; i <= 10; i++ {
 		generateBoard(gameOn, sq, pOneMoves, header, pOneScore, pTwoScore)
