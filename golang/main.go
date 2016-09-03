@@ -50,23 +50,23 @@ func boardUpdater() {
 
 		switch {
 		case choice == "1" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 1)
+			doThings(1)
 		case choice == "2" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 2)
+			doThings(2)
 		case choice == "3" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 3)
+			doThings(3)
 		case choice == "4" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 4)
+			doThings(4)
 		case choice == "5" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 5)
+			doThings(5)
 		case choice == "6" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 6)
+			doThings(6)
 		case choice == "7" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 7)
+			doThings(7)
 		case choice == "8" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 8)
+			doThings(8)
 		case choice == "9" && gameOn == true:
-			doThings(pOneMoves, boardMoves, sq, 9)
+			doThings(9)
 		default:
 			fmt.Println("Try again plz")
 		}
