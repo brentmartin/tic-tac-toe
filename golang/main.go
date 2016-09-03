@@ -35,6 +35,7 @@ func boardUpdater() {
 
 	for i := 1; i <= 10; i++ {
 
+func playController() {
 		if gameOn == false {
 			fmt.Println("C) Play against Computer")
 			fmt.Println("P) Play against Player")
