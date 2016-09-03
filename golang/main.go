@@ -26,6 +26,8 @@ func main() {
 	boardMoves = make([]int, 1, 10)
 	pOneMoves = make([]int, 1, 10)
 	// pTwoMoves = make([]int, 1, 10)
+	pOneScore = 0
+	pTwoScore = 0
 
 
 
