@@ -21,6 +21,7 @@ var sq []string
 // var pTwoWin bool
 // var twoPlayer bool
 func main() {
+	header = "   Golang Edition  "
 	sq = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
 	boardMoves = make([]int, 1, 10)
 	pOneMoves = make([]int, 1, 10)
