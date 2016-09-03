@@ -103,17 +103,15 @@ func integerInSlice(a int, list []int) bool {
 	return false
 }
 
-func doThings(pM []int, bM []int, sq []string, x int) ([]int, []int, []string) {
-	pM = append(pM, x)
-	bM = append(bM, x)
+func doThings(x int) {
+	pOneMoves = append(pOneMoves, x)
+	boardMoves = append(boardMoves, x)
 
 	for i := 1; i <= 9; i++ {
-		if integerInSlice(i, pM) {
+		if integerInSlice(i, pOneMoves) {
 			sq[i] = "X"
 		}
 	}
-
-	return pM, bM, sq
 }
 
 // time.Sleep(time.Millisecond * 2000)
