@@ -21,6 +21,9 @@ var sq []string
 // var pTwoWin bool
 // var twoPlayer bool
 func main() {
+	boardMoves = make([]int, 1, 10)
+	pOneMoves = make([]int, 1, 10)
+	// pTwoMoves = make([]int, 1, 10)
 
 
 
