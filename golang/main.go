@@ -5,9 +5,9 @@ import (
 	// "time"
 )
 
+var pOneScore int
+var pTwoScore int
 func main() {
-	pOneScore := 0
-	pTwoScore := 0
 	gameOn := true
 	// twoPlayer := false
 	// gameNumber := 0
