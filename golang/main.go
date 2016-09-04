@@ -93,6 +93,8 @@ func playController() {
 		convStringToInt(choice)
 		playUnavail = integerInSlice(choiceInt, boardMoves)
 		switch {
+		case playUnavail == true:
+			break
 		case choice == "1" && gameOn == true:
 			move <- 1
 		case choice == "2" && gameOn == true:
