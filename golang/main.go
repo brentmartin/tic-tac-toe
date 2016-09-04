@@ -42,6 +42,8 @@ func main() {
 	pTwoScore = 0
 	gameOn = true
 
+	playUnavail = false
+
 	wg.Add(2)
 	go playController()
 	go boardUpdater()
@@ -83,6 +85,11 @@ func playController() {
 		}
 
 		if gameOn == true {
+		if gameOn == true && playUnavail == false {
+			time.Sleep(time.Millisecond * 50)
+			fmt.Println("The numbers correspond with the tiles")
+			fmt.Println("Choose a number 1-9 to make your move")
+		}
 			fmt.Println("The numbers correspond with the tiles")
 			fmt.Println("Choose a number 1-9 to make your move")
 		}
