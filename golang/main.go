@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
-	// "time"
+	"time"
 )
 
 var wg sync.WaitGroup
@@ -70,6 +70,7 @@ func boardUpdater() {
 
 func playController() {
 		if gameOn == false {
+			time.Sleep(time.Millisecond * 50)
 			fmt.Println("C) Play against Computer")
 			fmt.Println("P) Play against Player")
 		}
@@ -126,6 +127,4 @@ func doThings(m int) {
 		}
 	}
 }
-
-// time.Sleep(time.Millisecond * 2000)
 
