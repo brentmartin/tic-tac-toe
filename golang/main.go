@@ -88,6 +88,7 @@ func playController() {
 		fmt.Print("Please choose an option: ")
 		fmt.Scanln(&choice)
 
+		convStringToInt(choice)
 		switch {
 		case choice == "1" && gameOn == true:
 			move <- 1
