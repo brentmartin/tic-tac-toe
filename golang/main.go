@@ -116,9 +116,9 @@ func integerInSlice(a int, list []int) bool {
 	return false
 }
 
-func doThings(x int) {
-	pOneMoves = append(pOneMoves, x)
-	boardMoves = append(boardMoves, x)
+func doThings(m int) {
+	pOneMoves = append(pOneMoves, m)
+	boardMoves = append(boardMoves, m)
 
 	for i := 1; i <= 9; i++ {
 		if integerInSlice(i, pOneMoves) {
