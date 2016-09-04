@@ -91,6 +91,7 @@ func playController() {
 		fmt.Scanln(&choice)
 
 		convStringToInt(choice)
+		playUnavail = integerInSlice(choiceInt, boardMoves)
 		switch {
 		case choice == "1" && gameOn == true:
 			move <- 1
