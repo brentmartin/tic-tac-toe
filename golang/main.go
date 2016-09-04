@@ -71,6 +71,14 @@ func boardUpdater() {
 	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
+		if m == 101 {
+			fmt.Println("        Tile already selected!       ")
+			fmt.Println("Please choose an eligible number play")
+		}
+		if m == 102 {
+			fmt.Println("                                     ")
+			fmt.Println("Please choose an eligible number play")
+		}
 		m = <-move
 		if m >= 1 && m <= 9 {
 			doThings(m)
