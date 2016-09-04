@@ -30,6 +30,8 @@ var m int
 var choiceString string
 var choiceInt int
 
+var playUnavail bool
+
 func main() {
 	header = "   Golang Edition  "
 	sq = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
