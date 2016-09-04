@@ -90,6 +90,8 @@ func playController() {
 			fmt.Println("The numbers correspond with the tiles")
 			fmt.Println("Choose a number 1-9 to make your move")
 		}
+
+		if gameOn == true && playUnavail == true {
 			fmt.Println("The numbers correspond with the tiles")
 			fmt.Println("Choose a number 1-9 to make your move")
 		}
