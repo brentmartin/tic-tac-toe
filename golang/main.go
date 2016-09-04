@@ -15,6 +15,7 @@ var choice string
 // var gameNumber int
 var boardMoves []int
 var pOneMoves []int
+var move = make(chan int)
 
 // var pTwoMoves []int
 var gameOn bool
