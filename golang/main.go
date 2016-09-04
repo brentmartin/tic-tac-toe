@@ -133,3 +133,9 @@ func doThings(m int) {
 	}
 }
 
+func convStringToInt(text string) {
+	choiceString = text
+	if s, err := strconv.Atoi(choiceString); err == nil {
+		choiceInt = s
+	}
+}
