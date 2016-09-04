@@ -92,6 +92,20 @@ func playController() {
 		}
 
 		if gameOn == true && playUnavail == true {
+			move <- 101
+			time.Sleep(time.Millisecond * 500)
+			move <- 102
+			time.Sleep(time.Millisecond * 500)
+			move <- 101
+			time.Sleep(time.Millisecond * 500)
+			move <- 102
+			time.Sleep(time.Millisecond * 500)
+			move <- 101
+			time.Sleep(time.Millisecond * 500)
+			move <- 102
+			time.Sleep(time.Millisecond * 500)
+			move <- 0
+			time.Sleep(time.Millisecond * 50)
 			fmt.Println("The numbers correspond with the tiles")
 			fmt.Println("Choose a number 1-9 to make your move")
 		}
