@@ -62,6 +62,8 @@ func boardUpdater() {
 	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
+		m = <-move
+			doThings(m)
 }
 
 func playController() {
