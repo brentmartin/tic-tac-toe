@@ -63,7 +63,9 @@ func boardUpdater() {
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
 		m = <-move
+		if m >= 1 && m <= 9 {
 			doThings(m)
+		}
 }
 
 func playController() {
