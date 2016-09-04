@@ -26,6 +26,10 @@ var sq []string
 // var pTwoWin bool
 // var twoPlayer bool
 var m int
+
+var choiceString string
+var choiceInt int
+
 func main() {
 	header = "   Golang Edition  "
 	sq = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
