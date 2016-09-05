@@ -72,6 +72,7 @@ func boardUpdater() {
 	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
+		os.Stdout.WriteString("\x1b[3;J\x1b[H\x1b[2J")
 		if m == 101 {
 			fmt.Println("        Tile already selected!       ")
 			fmt.Println("Please choose an eligible number play")
