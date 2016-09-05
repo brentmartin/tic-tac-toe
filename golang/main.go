@@ -72,6 +72,7 @@ func boardUpdater() {
 	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
+	for {
 		os.Stdout.WriteString("\x1b[3;J\x1b[H\x1b[2J")
 		if m == 101 {
 			fmt.Println("        Tile already selected!       ")
@@ -85,9 +86,11 @@ func boardUpdater() {
 		if m >= 1 && m <= 9 {
 			doThings(m)
 		}
+	}
 }
 
 func playController() {
+	for {
 		if gameOn == false {
 			time.Sleep(time.Millisecond * 50)
 			fmt.Println("C) Play against Computer")
