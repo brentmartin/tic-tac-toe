@@ -31,8 +31,6 @@ var move = make(chan int)
 var gameOn bool
 var sq []string
 
-// var pOneWin bool
-// var pTwoWin bool
 // var twoPlayer bool
 var m int
 var c int
@@ -115,6 +113,18 @@ func boardLogic() {
 			win = true
 		case checkWin(3, 5, 7, slice):
 			win = true
+		}
+
+		if win == true && turn == 1 {
+			pOneWin = true
+			pOneScore++
+			win = false
+		}
+
+		if win == true && turn == 2 {
+			pTwoWin = true
+			pTwoScore++
+			win = false
 		}
 	}
 }
