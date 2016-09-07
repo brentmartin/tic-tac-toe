@@ -19,6 +19,9 @@ var header string
 var choice string
 // var gameNumber int
 var boardMoves []int
+
+var pOneTurn bool
+var pTwoTurn bool
 var pOneWin bool
 var pTwoWin bool
 var pOneMoves []int
