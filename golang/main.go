@@ -210,3 +210,10 @@ func convStringToInt(text string) {
 		choiceInt = s
 	}
 }
+
+func checkWin(a int, b int, c int, slice []int) bool {
+	if integerInSlice(a, slice) {
+		return true
+	}
+	return false
+}
