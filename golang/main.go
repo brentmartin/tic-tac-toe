@@ -80,6 +80,9 @@ func boardUpdater() {
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
 func boardLogic() {
+	var turn int
+	var slice []int
+	var win bool
 	for {
 		c <- check
 	}
