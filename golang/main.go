@@ -47,9 +47,9 @@ func main() {
 
 	playUnavail = false
 
-	wg.Add(2)
-	go boardUpdater()
+	wg.Add(3)
 	go boardController()
+	go boardInterface()
 	go boardLogic()
 	wg.Wait()
 
