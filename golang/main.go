@@ -233,10 +233,11 @@ func integerInSlice(a int, list []int) bool {
 }
 
 func doThings(m int) {
-	pOneMoves = append(pOneMoves, m)
 	if pOneTurn == true {
+		pOneMoves = append(pOneMoves, m)
 	}
 	if pTwoTurn == true {
+		pTwoMoves = append(pTwoMoves, m)
 	}
 	boardMoves = append(boardMoves, m)
 
