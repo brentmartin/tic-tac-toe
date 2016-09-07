@@ -98,6 +98,24 @@ func boardLogic() {
 			turn = 2
 		}
 
+		switch {
+		case checkWin(1, 2, 3, slice):
+			win = true
+		case checkWin(4, 5, 6, slice):
+			win = true
+		case checkWin(7, 8, 9, slice):
+			win = true
+		case checkWin(1, 4, 7, slice):
+			win = true
+		case checkWin(2, 5, 8, slice):
+			win = true
+		case checkWin(3, 6, 9, slice):
+			win = true
+		case checkWin(1, 5, 9, slice):
+			win = true
+		case checkWin(3, 5, 7, slice):
+			win = true
+		}
 	}
 }
 	for {
