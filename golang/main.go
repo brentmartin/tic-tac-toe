@@ -180,6 +180,17 @@ func boardController() {
 			fmt.Println("Choose a number 1-9 to make your move")
 		}
 
+		switch {
+		case gameOn == true && playUnavail == false && pOneTurn == true:
+			pOneTurn = false
+			pTwoTurn = true
+			break
+		case gameOn == true && playUnavail == false && pTwoTurn == true:
+			pTwoTurn = false
+			pOneTurn = true
+			break
+		}
+
 		fmt.Print("Please choose an option: ")
 		fmt.Scanln(&choice)
 
