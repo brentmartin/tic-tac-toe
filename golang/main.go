@@ -85,6 +85,16 @@ func boardLogic() {
 	var win bool
 	for {
 		c <- check
+
+		if pOneTurn == true {
+			slice = pOneMoves
+			turn = 1
+		}
+		if pTwoTurn == true {
+			slice = pTwoMoves
+			turn = 2
+		}
+
 	}
 }
 	for {
