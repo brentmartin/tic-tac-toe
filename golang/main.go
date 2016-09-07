@@ -16,6 +16,8 @@ var header string
 var choice string
 // var gameNumber int
 var boardMoves []int
+var pOneWin bool
+var pTwoWin bool
 var pOneMoves []int
 var move = make(chan int)
 
@@ -48,6 +50,7 @@ func main() {
 	wg.Add(2)
 	go playController()
 	go boardUpdater()
+	go boardLogic()
 	wg.Wait()
 
 }
@@ -72,6 +75,10 @@ func boardUpdater() {
 	fmt.Println("   ⎟═══╬═══╬═══⎟   ")
 	fmt.Println("   ⎟", sq[7], "║", sq[8], "║", sq[9], "⎟   ")
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
+func boardLogic() {
+	for {
+	}
+}
 	for {
 		os.Stdout.WriteString("\x1b[3;J\x1b[H\x1b[2J")
 		if m == 101 {
