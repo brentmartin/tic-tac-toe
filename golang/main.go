@@ -32,6 +32,7 @@ var sq []string
 // var pTwoWin bool
 // var twoPlayer bool
 var m int
+var c int
 
 var choiceString string
 var choiceInt int
@@ -80,6 +81,7 @@ func boardUpdater() {
 	fmt.Println("   ┕━━━━━━━━━━━┙   ")
 func boardLogic() {
 	for {
+		c <- check
 	}
 }
 	for {
