@@ -10,6 +10,9 @@ import (
 
 var wg sync.WaitGroup
 
+var move = make(chan int)
+var check = make(chan int)
+
 var pOneScore int
 var pTwoScore int
 var header string
@@ -92,6 +95,7 @@ func boardLogic() {
 		m = <-move
 		if m >= 1 && m <= 9 {
 			doThings(m)
+			check <- m
 		}
 	}
 }
