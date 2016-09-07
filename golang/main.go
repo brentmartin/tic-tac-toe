@@ -235,15 +235,19 @@ func integerInSlice(a int, list []int) bool {
 func doThings(m int) {
 	if pOneTurn == true {
 		pOneMoves = append(pOneMoves, m)
+		slice := pOneMoves
+		mark = "X"
 	}
 	if pTwoTurn == true {
 		pTwoMoves = append(pTwoMoves, m)
+		slice := pTwoMoves
+		mark = "O"
 	}
 	boardMoves = append(boardMoves, m)
 
 	for i := 1; i <= 9; i++ {
-		if integerInSlice(i, pOneMoves) {
-			sq[i] = "X"
+		if integerInSlice(i, slice) {
+			sq[i] = mark
 		}
 	}
 }
