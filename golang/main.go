@@ -48,8 +48,8 @@ func main() {
 	playUnavail = false
 
 	wg.Add(2)
-	go playController()
 	go boardUpdater()
+	go boardController()
 	go boardLogic()
 	wg.Wait()
 
@@ -96,7 +96,7 @@ func boardLogic() {
 	}
 }
 
-func playController() {
+func boardController() {
 	for {
 		if gameOn == false {
 			time.Sleep(time.Millisecond * 50)
