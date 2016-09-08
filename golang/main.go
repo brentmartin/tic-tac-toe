@@ -33,7 +33,7 @@ var sq []string
 
 // var twoPlayer bool
 var m int
-var c int
+var ck int
 
 var choiceString string
 var choiceInt int
@@ -85,7 +85,7 @@ func boardLogic() {
 	var slice []int
 	var win bool
 	for {
-		c <- check
+		ck = <-check
 
 		if pOneTurn == true {
 			slice = pOneMoves
