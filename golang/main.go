@@ -15,23 +15,25 @@ var check = make(chan int)
 
 var pOneScore int
 var pTwoScore int
-var header string
-var choice string
-// var gameNumber int
-var boardMoves []int
 
 var pOneTurn bool
 var pTwoTurn bool
 var pOneWin bool
 var pTwoWin bool
+
+// var twoPlayer bool
 var pOneMoves []int
-var move = make(chan int)
 var pTwoMoves []int
+var boardMoves []int
+
+var header string
+var choice string
+
+// var gameNumber int
 
 var gameOn bool
 var sq []string
 
-// var twoPlayer bool
 var m int
 var ck int
 
@@ -154,7 +156,6 @@ func boardController() {
 			fmt.Println("P) Play against Player")
 		}
 
-		if gameOn == true {
 		if gameOn == true && playUnavail == false {
 			time.Sleep(time.Millisecond * 50)
 			fmt.Println("The numbers correspond with the tiles")
